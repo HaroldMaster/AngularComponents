@@ -1,0 +1,18 @@
+<form #form="ngForm">
+    <label>
+        Correo
+        <input type="text" name="correo" ngModel>
+    </label>
+    <label>
+        Contrasena
+        <input type="text" name="contrasena" ngModel>
+    </label>
+    <ng-content select="app-remember"></ng-content>
+    <ng-content #name></ng-content>
+    
+    <div>
+        <button type="submit" (click)="enviarUsuario(form.value)">Join Us</button>
+    </div>
+</form>
+
+
