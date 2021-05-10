@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, OnChanges, ViewChild, ContentChildren, QueryList, AfterViewInit, ContentChild, ElementRef, ChangeDetectorRef, AfterViewChecked } from '@angular/core';
+import { AfterContentInit, Component, OnChanges, ViewChild, ContentChildren, QueryList, AfterViewInit, ContentChild, ElementRef, ChangeDetectorRef, AfterViewChecked, AfterContentChecked } from '@angular/core';
 import { MainComponent } from './main/main.component';
 import { MensajeAutenticacionComponent } from './main/mensaje-autenticacion/mensaje-autenticacion.component';
 import { RememberComponent } from './main/remember/remember.component';
@@ -8,7 +8,7 @@ import { RememberComponent } from './main/remember/remember.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit, AfterContentInit, AfterViewChecked {
+export class AppComponent { //implements AfterViewInit, AfterContentInit, AfterViewChecked {
   @ViewChild(RememberComponent, {static:true}) 
   remember !: RememberComponent;
   @ViewChild(MainComponent, {static:true}) 
@@ -26,14 +26,14 @@ export class AppComponent implements AfterViewInit, AfterContentInit, AfterViewC
   title = 'ng-content';
   estadoBox: boolean= false;
   constructor(private cd: ChangeDetectorRef){}
+
+
+  /* Descomentar esto
   ngAfterContentInit(){
     
     console.log('Content',this.remember)
     console.log('Content',this.main)
     console.log('Content',this.mensaje)
-   // if(this.mensaje) this.mensaje.diasLogeados=20;
-   /*if(this.mensaje) 
-    console.log(this.mensaje.nativeElement.textContent)*/
   }
   ngAfterViewInit(){
     console.log('View',this.remember)
@@ -47,7 +47,7 @@ export class AppComponent implements AfterViewInit, AfterContentInit, AfterViewC
     //Called after every check of the component's view. Applies to components only.
     //Add 'implements AfterViewChecked' to the class.
     
-  }
+  }*/
   obtenerEstadoCheck(event:any){
     this.estadoBox = event
   }

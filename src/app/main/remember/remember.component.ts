@@ -8,6 +8,8 @@ import { Component, OnInit, Output,Input, EventEmitter, OnChanges } from '@angul
 export class RememberComponent implements OnInit, OnChanges {
   @Output()
   estadoCheck: EventEmitter<any> = new EventEmitter();
+
+  mensajeInicial: string = 'Presiona'
   check: boolean = false;
   constructor() { }
   ngOnChanges(){

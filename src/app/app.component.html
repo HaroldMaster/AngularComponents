@@ -8,9 +8,10 @@
   Ingreso
   <br />
   <app-main [checkBoxEstado]="estadoBox">
+    <p #prueba>Probando el ContentChild</p>
     <app-remember (estadoCheck)="obtenerEstadoCheck($event)"> </app-remember>
     <div *ngIf="estadoBox">
-      <app-mensaje-autenticacion></app-mensaje-autenticacion>
+      <app-mensaje-autenticacion #mensaje></app-mensaje-autenticacion>
     </div>
   </app-main>
 </div>
